@@ -2,13 +2,9 @@ def translate(text)
 	words = text.split " "
 	result_list = []
 
-	words.each do |word|
-		new_word = translate_single(word)
-		result_list.push(new_word)
-	end
+	result_list = words.map {|word| translate_single(word)}
 	result_list.join " "
 end
-
 
 def translate_single(text)
 	consonants = "bcdfghjklmnpqrstvwxyz"
